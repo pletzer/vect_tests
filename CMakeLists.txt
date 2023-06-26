@@ -4,8 +4,10 @@ cmake_minimum_required (VERSION 3.2)
 
 if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
 	add_compile_options(-O3 -ffast-math -Rpass-analysis=loop-vectorize -Rpass=loop-vectorize -Rpass-missed=loop-vectorize)
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Intel")
+	add_compile_options(-O3 -ffast-math -qopt-report=3)
+elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+	add_compile_options(-O3 -ffast-math -ftree-vectorizer-verbose=2)
 endif()
-
-message(STATUS "C++ compiler flags: ${CMAKE_CXX_COMPILER_FLAGS}")
 
 add_subdirectory(c_array)
