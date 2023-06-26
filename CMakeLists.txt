@@ -7,7 +7,7 @@ if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
 elseif(CMAKE_CXX_COMPILER_ID STREQUAL "Intel")
 	add_compile_options(-O3 -ffast-math -qopt-report=3)
 elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
-	add_compile_options(-O3 -ffast-math -ftree-vectorizer-verbose=2)
+	add_compile_options(-03 -ffast-math -ftree-vectorizer-verbose=2 -ftree-vectorize)
 endif()
 
 add_subdirectory(c_array)
