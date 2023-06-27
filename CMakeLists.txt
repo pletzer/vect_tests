@@ -12,3 +12,11 @@ endif()
 
 add_subdirectory(c_array)
 add_subdirectory(vector)
+
+# expect the user to set
+message(STATUS "ADMB_DIR: ${ADMB_DIR}")
+option(ADMB_DIR "Top ADMB directory" "")
+file(GLOB ADMB_LIBRARY_LIST ${ADMB_DIR}/build/admb/lib/libadmb-*.a)
+message(STATUS "list of admb libraries: ${ADMB_LIBRARY_LIST}")
+list(GET ADMB_LIBRARY_LIST 0 ADMB_LIBRARY)
+add_subdirectory(dvector)
