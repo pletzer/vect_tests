@@ -1,3 +1,6 @@
+configure_file(dvector.sl.in dvector.sl)
+configure_file(dvector2.sl.in dvector2.sl)
+
 include_directories(${ADMB_DIR}/build/admb/include)
 
 add_executable(dvector dvector.cxx)

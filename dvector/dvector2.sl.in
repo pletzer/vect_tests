@@ -1,0 +1,12 @@
+#!/bin/bash
+#SBATCH --job-name=dvector
+#SBATCH --time=00:10:00
+#SBATCH --mem-per-cpu=10g
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH --partition=milan
+#SBATCH --hint=nomultithread    # don't use hyperthreading
+
+exe="@CMAKE_BINARY_DIR@/dvector/dvector2"
+time srun $exe 1000000000
+
