@@ -19,10 +19,11 @@ int main(int argc, char* argv[]) {
 	// compute
 	time(&start);
 	double s = 0;
+	double* a_ptr = &a[a.indexmin()];
 #pragma omp simd
 	for (std::size_t i = 0; i < n; ++i) {
-		a[i] = i;
-		s += a[i];
+		a_ptr[i] = i;
+		s += a_ptr[i];
 	}
 	time(&end);
 
