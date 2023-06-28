@@ -19,6 +19,7 @@ int main(int argc, char* argv[]) {
 	// compute
 	time(&start);
 	double s = 0;
+#pragma simd
 	for (std::size_t i = 0; i < n; ++i) {
 		a[i] = i;
 		s += a[i];

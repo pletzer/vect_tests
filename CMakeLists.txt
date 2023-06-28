@@ -10,6 +10,8 @@ elseif(CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
 	add_compile_options(-03 -ffast-math -ftree-vectorizer-verbose=2 -ftree-vectorize)
 endif()
 
+find_package(OpenMP)
+
 add_subdirectory(c_array)
 add_subdirectory(vector)
 
